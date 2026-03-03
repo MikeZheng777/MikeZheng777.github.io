@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Han Zheng — MIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1a1a2e;
+      --text-secondary: #444;
+      --accent: #2d5a9e;
+      --accent-hover: #1e3f72;
+      --highlight-bg: #f0f4fa;
+      --border: #d8dde6;
+      --bg: #fdfdff;
+      --tag-bg: #e8edf5;
+      --tag-text: #3a5a8c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+
+    /* ─── Header / Bio ─── */
+    .header { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 48px; }
+
+    .header-photo {
+      flex-shrink: 0; width: 180px; height: 180px; border-radius: 50%;
+      background: linear-gradient(135deg, #3a6db5 0%, #7ba4d9 50%, #b8d4f0 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lora', serif; font-size: 52px; font-weight: 600;
+      color: #fff; letter-spacing: -1px;
+      box-shadow: 0 4px 20px rgba(45, 90, 158, 0.15);
+    }
+
+    .header-info { flex: 1; }
+
+    .header-info h1 {
+      font-family: 'Lora', serif; font-size: 36px; font-weight: 600;
+      color: var(--text); margin-bottom: 14px; letter-spacing: -0.5px;
+    }
+
+    .header-info .bio {
+      color: var(--text-secondary); font-size: 15.5px; line-height: 1.7; margin-bottom: 16px;
+    }
+
+    .header-links { display: flex; flex-wrap: wrap; gap: 6px 4px; font-size: 14.5px; }
+    .header-links a { font-weight: 500; }
+    .header-links .sep { color: #aab; margin: 0 4px; user-select: none; }
+
+    /* ─── Section headings ─── */
+    .section-title {
+      font-family: 'Lora', serif; font-size: 22px; font-weight: 600;
+      color: var(--text); margin-bottom: 8px; padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent); display: inline-block;
+    }
+
+    .section-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; line-height: 1.65; }
+
+    section { margin-bottom: 44px; }
+
+    /* ─── Publication entries ─── */
+    .pub-entry {
+      display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #eef0f4; transition: background 0.2s;
+    }
+    .pub-entry:last-child { border-bottom: none; }
+    .pub-entry:hover { background: var(--highlight-bg); margin: 0 -12px; padding: 18px 12px; border-radius: 6px; }
+
+    .pub-icon {
+      flex-shrink: 0; width: 56px; height: 56px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 22px; margin-top: 2px;
+    }
+
+    .pub-content { flex: 1; }
+
+    .pub-title {
+      font-family: 'Lora', serif; font-size: 15.5px; font-weight: 600;
+      color: var(--text); margin-bottom: 4px; line-height: 1.45;
+    }
+
+    .pub-authors { font-size: 13.5px; color: var(--text-secondary); margin-bottom: 4px; line-height: 1.5; }
+    .pub-authors .me { font-weight: 600; color: var(--text); }
+
+    .pub-venue {
+      font-size: 13px; color: var(--tag-text); background: var(--tag-bg);
+      display: inline-block; padding: 1px 8px; border-radius: 4px; margin-bottom: 6px; font-weight: 500;
+    }
+
+    .pub-award {
+      font-size: 12px; color: #b8860b; background: #fdf6e3;
+      display: inline-block; padding: 1px 8px; border-radius: 4px; margin-left: 6px; font-weight: 600;
+    }
+
+    .pub-desc { font-size: 14px; color: #555; line-height: 1.6; margin-top: 4px; }
+
+    .pub-highlight {
+      background: var(--highlight-bg); margin: 0 -12px; padding: 18px 12px; border-radius: 6px;
+    }
+
+    /* ─── Experience entries ─── */
+    .exp-entry { padding: 14px 0; border-bottom: 1px solid #eef0f4; }
+    .exp-entry:last-child { border-bottom: none; }
+
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+    .exp-role { font-weight: 600; font-size: 15px; color: var(--text); }
+    .exp-date { font-size: 13.5px; color: #888; }
+    .exp-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+    .exp-desc { font-size: 14px; color: #555; line-height: 1.6; }
+
+    /* ─── Education ─── */
+    .edu-entry { display: flex; gap: 12px; padding: 10px 0; align-items: baseline; }
+    .edu-years { flex-shrink: 0; width: 90px; font-size: 13.5px; color: #888; font-weight: 500; }
+    .edu-details { font-size: 14.5px; color: var(--text); line-height: 1.5; }
+    .edu-details .school { font-weight: 600; }
+    .edu-details .degree { color: var(--text-secondary); }
+
+    /* ─── Skills ─── */
+    .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      background: var(--tag-bg); color: var(--tag-text);
+      padding: 4px 14px; border-radius: 20px; font-size: 13.5px; font-weight: 500;
+    }
+
+    .footer { text-align: center; padding: 30px 0 10px; font-size: 12.5px; color: #aab; border-top: 1px solid #eef0f4; }
+    .footer a { color: #99a; }
+
+    .icon-mapf { background: #e8f4f8; color: #2196F3; }
+    .icon-llm { background: #fce4ec; color: #e91e63; }
+    .icon-auto { background: #e8f5e9; color: #4caf50; }
+    .icon-eco { background: #fff3e0; color: #ff9800; }
+    .icon-rl { background: #f3e5f5; color: #9c27b0; }
+    .icon-patent { background: #efebe9; color: #795548; }
+
+    @media (max-width: 640px) {
+      .header { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+      .header-links { justify-content: center; }
+      .header-photo { width: 140px; height: 140px; font-size: 42px; }
+      .header-info h1 { font-size: 28px; }
+      .pub-entry { flex-direction: column; gap: 10px; }
+      .pub-icon { width: 44px; height: 44px; font-size: 18px; }
+      .exp-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- BIO -->
+  <div class="header">
+    <div class="header-photo">HZ</div>
+    <div class="header-info">
+      <h1>Han Zheng</h1>
+      <p class="bio">
+        I'm a Ph.D. student in <strong>Mechanical Engineering</strong> &amp; <strong>Computational Science and Engineering</strong> at
+        <a href="https://web.mit.edu/">MIT</a>, advised by
+        <a href="https://www.wucathy.com">Prof. Cathy Wu</a>.
+        Previously I was at the University of Michigan working with the late
+        <a href="https://en.wikipedia.org/wiki/Huei_Peng">Prof. Huei Peng</a>, and I hold dual B.S./B.E. degrees
+        from UIUC and Zhejiang University.
+      </p>
+      <div class="header-links">
+        <a href="mailto:hanzheng@mit.edu">Email</a>
+        <span class="sep">/</span>
+        <a href="https://scholar.google.com/citations?user=sZc3Xw8AAAAJ&hl=en">Google Scholar</a>
+        <span class="sep">/</span>
+        <a href="https://github.com/MikeZheng777">GitHub</a>
+        <span class="sep">/</span>
+        <a href="https://www.linkedin.com/in/han-zheng-84408021b/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <section>
+    <div class="section-title">Research</div>
+    <p class="section-desc">
+      I'm interested in scalable planning and decision-making for <strong>multi-agent systems</strong>, combining
+      <strong>reinforcement learning</strong> with classical search and <strong>combinatorial optimization</strong>.
+      My work spans multi-agent path finding (MAPF), autonomous driving coordination, warehouse robotics,
+      and LLM-powered optimization solvers.
+    </p>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-mapf">&#129302;</div>
+      <div class="pub-content">
+        <div class="pub-title">Learning-Guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</div>
+        <div class="pub-authors"><span class="me">H. Zheng</span>, Y. Ma, B. Araki, J. Chen, C. Wu</div>
+        <span class="pub-venue">JAIR, 2026</span>
+        <div class="pub-desc">
+          Developed RL-RH-PP, combining deep reinforcement learning with search-based prioritized planning for
+          lifelong MAPF. Demonstrated superior throughput and strong generalization across agent densities and planning horizons.
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-llm">&#128208;</div>
+      <div class="pub-content">
+        <div class="pub-title">AlphaOPT: Formulating Optimization Programs with Self-Improving LLM Experience Library</div>
+        <div class="pub-authors">
+          M. Kong, A. Qu, X. Guo, W. Ouyang, C. Jiang, <span class="me">H. Zheng</span>, Y. Ma, D. Zhuang, Y. Tang, J. Li, H. Wang, C. Wu, J. Zhao
+        </div>
+        <span class="pub-venue">INFORMS Data Mining, 2025</span>
+        <span class="pub-award">&#9733; Best Paper Finalist</span>
+        <div class="pub-desc">
+          Self-improving LLM framework that builds an experience library for formulating optimization programs across diverse problem domains.
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-llm">&#128506;</div>
+      <div class="pub-content">
+        <div class="pub-title">ItiNera: Integrating Spatial Optimization with Large Language Models for Open-Domain Urban Itinerary Planning</div>
+        <div class="pub-authors">
+          Y. Tang, Z. Wang, A. Qu, Y. Yan, Z. Wu, D. Zhuang, J. Kai, K. Hou, X. Guo, <span class="me">H. Zheng</span>, T. Luo, J. Zhao, Z. Zhao, W. Ma
+        </div>
+        <span class="pub-venue">EMNLP, 2024</span>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-auto">&#128663;</div>
+      <div class="pub-content">
+        <div class="pub-title">Multi-Agent Path Finding for Mixed Autonomy Traffic Coordination</div>
+        <div class="pub-authors"><span class="me">H. Zheng</span>, Z. Yan, C. Wu</div>
+        <span class="pub-venue">IROS, 2024</span>
+        <div class="pub-desc">
+          Pioneered BK-PBS, integrating offline-trained behavior prediction with multi-agent pathfinding to coordinate
+          connected and human-driven vehicles under realistic kinematic constraints on highways.
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-auto">&#128678;</div>
+      <div class="pub-content">
+        <div class="pub-title">Multi-Agent Path Finding for Cooperative Autonomous Driving</div>
+        <div class="pub-authors">Z. Yan, <span class="me">H. Zheng</span>, C. Wu</div>
+        <span class="pub-venue">ICRA, 2024</span>
+        <div class="pub-desc">
+          Proposed OBS-KATS for signal-free intersection coordination. Proved soundness, completeness, and optimality
+          of the crossing order search with significant throughput improvements.
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-icon icon-eco">&#9889;</div>
+      <div class="pub-content">
+        <div class="pub-title">Connected Eco-Driving for Urban Corridors</div>
+        <div class="pub-authors">X. Wang, <span class="me">H. Zheng</span>, K. Ahn, X. Zhang, S. Rajakuma, H. Peng</div>
+        <span class="pub-venue">MECC, 2023</span>
+        <div class="pub-desc">
+          Hierarchical eco-driving algorithms for electric connected vehicles, reducing energy consumption near adaptive traffic signals in urban areas.
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- INDUSTRY -->
+  <section>
+    <div class="section-title">Industry</div>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Applied Scientist Intern — Amazon AGI</span>
+        <span class="exp-date">Incoming, 2026</span>
+      </div>
+      <div class="exp-org">Bellevue, WA</div>
+      <div class="exp-desc">
+        Reinforcement fine-tuning for large language models.
+      </div>
+    </div>
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Applied Scientist Intern — Symbotic</span>
+        <span class="exp-date">May – Sep 2025</span>
+      </div>
+      <div class="exp-org">Wilmington, MA</div>
+      <div class="exp-desc">
+        Research on learning-based path planning and search algorithms for large-scale warehouse robot fleet coordination.
+        Integrated reinforcement learning and combinatorial optimization for routing efficiency, congestion management, and real-time task allocation.
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-entry">
+      <div class="edu-years">2023 –</div>
+      <div class="edu-details">
+        <span class="school">Massachusetts Institute of Technology</span><br>
+        <span class="degree">Ph.D. in Mechanical Engineering &amp; Computational Science and Engineering</span>
+      </div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-years">2021 – 2023</div>
+      <div class="edu-details">
+        <span class="school">University of Michigan – Ann Arbor</span><br>
+        <span class="degree">Ph.D. in Mechanical Engineering (transferred to MIT) · GPA 3.97/4.0</span>
+      </div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-years">2017 – 2021</div>
+      <div class="edu-details">
+        <span class="school">University of Illinois at Urbana-Champaign</span><br>
+        <span class="degree">B.S. Mechanical Engineering with Highest Honors · GPA 3.95/4.0</span>
+      </div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-years">2017 – 2021</div>
+      <div class="edu-details">
+        <span class="school">Zhejiang University</span><br>
+        <span class="degree">B.E. in Mechanical Engineering · GPA 3.95/4.0</span>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="footer">
+    Design inspired by <a href="https://jonbarron.info">Jon Barron</a>'s academic page. · Last updated 2026.
+  </div>
+
+</div>
+
+</body>
+</html>
