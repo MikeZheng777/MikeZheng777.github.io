@@ -39,10 +39,7 @@
 
     .header-photo {
       flex-shrink: 0; width: 180px; height: 180px; border-radius: 50%;
-      background: linear-gradient(135deg, #3a6db5 0%, #7ba4d9 50%, #b8d4f0 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Lora', serif; font-size: 52px; font-weight: 600;
-      color: #fff; letter-spacing: -1px;
+      object-fit: cover;
       box-shadow: 0 4px 20px rgba(45, 90, 158, 0.15);
     }
 
@@ -161,7 +158,7 @@
 
   <!-- BIO -->
   <div class="header">
-    <div class="header-photo">HZ</div>
+    <img class="header-photo" src="headshot.JPG" alt="Han Zheng">
     <div class="header-info">
       <h1>Han Zheng</h1>
       <p class="bio">
