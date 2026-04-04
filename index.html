@@ -71,15 +71,10 @@
 
     /* ─── Publication entries ─── */
     .pub-entry {
-      display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid #eef0f4; transition: background 0.2s;
+      padding: 18px 0; border-bottom: 1px solid #eef0f4; transition: background 0.2s;
     }
     .pub-entry:last-child { border-bottom: none; }
     .pub-entry:hover { background: var(--highlight-bg); margin: 0 -12px; padding: 18px 12px; border-radius: 6px; }
-
-    .pub-icon {
-      flex-shrink: 0; width: 56px; height: 56px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; font-size: 22px; margin-top: 2px;
-    }
 
     .pub-content { flex: 1; }
 
@@ -102,10 +97,6 @@
     }
 
     .pub-desc { font-size: 14px; color: #555; line-height: 1.6; margin-top: 4px; }
-
-    .pub-highlight {
-      background: var(--highlight-bg); margin: 0 -12px; padding: 18px 12px; border-radius: 6px;
-    }
 
     /* ─── Experience entries ─── */
     .exp-entry { padding: 14px 0; border-bottom: 1px solid #eef0f4; }
@@ -134,20 +125,11 @@
     .footer { text-align: center; padding: 30px 0 10px; font-size: 12.5px; color: #aab; border-top: 1px solid #eef0f4; }
     .footer a { color: #99a; }
 
-    .icon-mapf { background: #e8f4f8; color: #2196F3; }
-    .icon-llm { background: #fce4ec; color: #e91e63; }
-    .icon-auto { background: #e8f5e9; color: #4caf50; }
-    .icon-eco { background: #fff3e0; color: #ff9800; }
-    .icon-rl { background: #f3e5f5; color: #9c27b0; }
-    .icon-patent { background: #efebe9; color: #795548; }
-
     @media (max-width: 640px) {
       .header { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
       .header-links { justify-content: center; }
       .header-photo { width: 140px; height: 140px; font-size: 42px; }
       .header-info h1 { font-size: 28px; }
-      .pub-entry { flex-direction: column; gap: 10px; }
-      .pub-icon { width: 44px; height: 44px; font-size: 18px; }
       .exp-header { flex-direction: column; gap: 2px; }
     }
   </style>
@@ -191,9 +173,21 @@
     </p>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-mapf">&#129302;</div>
       <div class="pub-content">
-        <div class="pub-title">Learning-Guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2604.01658">CORAL: Towards Autonomous Multi-Agent Evolution for Open-Ended Discovery</a></div>
+        <div class="pub-authors">
+          A. Qu, <span class="me">H. Zheng</span>, Z. Zhou, Y. Yan, Y. Tang, S. Y. Ong, F. Hong, K. Zhou, C. Jiang, M. Kong, J. Zhu, X. Jiang, S. Li, C. Wu, B. K. H. Low, J. Zhao, P. P. Liang
+        </div>
+        <span class="pub-venue">arXiv, 2026</span>
+        <div class="pub-desc">
+          First framework for autonomous multi-agent evolution on open-ended problems. CORAL uses long-running LLM agents that explore, reflect, and collaborate through shared persistent memory and asynchronous execution, achieving 3–10× higher improvement rates over fixed evolutionary baselines across mathematical, algorithmic, and systems optimization tasks.
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-entry">
+      <div class="pub-content">
+        <div class="pub-title"><a href="https://arxiv.org/abs/2603.23838">Learning-Guided Prioritized Planning for Lifelong Multi-Agent Path Finding in Warehouse Automation</a></div>
         <div class="pub-authors"><span class="me">H. Zheng</span>, Y. Ma, B. Araki, J. Chen, C. Wu</div>
         <span class="pub-venue">JAIR, 2026</span>
         <div class="pub-desc">
@@ -204,9 +198,8 @@
     </div>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-llm">&#128208;</div>
       <div class="pub-content">
-        <div class="pub-title">AlphaOPT: Formulating Optimization Programs with Self-Improving LLM Experience Library</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2510.18428">AlphaOPT: Formulating Optimization Programs with Self-Improving LLM Experience Library</a></div>
         <div class="pub-authors">
           M. Kong, A. Qu, X. Guo, W. Ouyang, C. Jiang, <span class="me">H. Zheng</span>, Y. Ma, D. Zhuang, Y. Tang, J. Li, H. Wang, C. Wu, J. Zhao
         </div>
@@ -219,9 +212,8 @@
     </div>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-llm">&#128506;</div>
       <div class="pub-content">
-        <div class="pub-title">ItiNera: Integrating Spatial Optimization with Large Language Models for Open-Domain Urban Itinerary Planning</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2402.07204">ItiNera: Integrating Spatial Optimization with Large Language Models for Open-Domain Urban Itinerary Planning</a></div>
         <div class="pub-authors">
           Y. Tang, Z. Wang, A. Qu, Y. Yan, Z. Wu, D. Zhuang, J. Kai, K. Hou, X. Guo, <span class="me">H. Zheng</span>, T. Luo, J. Zhao, Z. Zhao, W. Ma
         </div>
@@ -230,9 +222,8 @@
     </div>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-auto">&#128663;</div>
       <div class="pub-content">
-        <div class="pub-title">Multi-Agent Path Finding for Mixed Autonomy Traffic Coordination</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2409.03881">Multi-Agent Path Finding for Mixed Autonomy Traffic Coordination</a></div>
         <div class="pub-authors"><span class="me">H. Zheng</span>, Z. Yan, C. Wu</div>
         <span class="pub-venue">IROS, 2024</span>
         <div class="pub-desc">
@@ -243,9 +234,8 @@
     </div>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-auto">&#128678;</div>
       <div class="pub-content">
-        <div class="pub-title">Multi-Agent Path Finding for Cooperative Autonomous Driving</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2402.00334">Multi-Agent Path Finding for Cooperative Autonomous Driving</a></div>
         <div class="pub-authors">Z. Yan, <span class="me">H. Zheng</span>, C. Wu</div>
         <span class="pub-venue">ICRA, 2024</span>
         <div class="pub-desc">
@@ -256,9 +246,8 @@
     </div>
 
     <div class="pub-entry">
-      <div class="pub-icon icon-eco">&#9889;</div>
       <div class="pub-content">
-        <div class="pub-title">Connected Eco-Driving for Urban Corridors</div>
+        <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S2405896323023698">Connected Eco-Driving for Urban Corridors</a></div>
         <div class="pub-authors">X. Wang, <span class="me">H. Zheng</span>, K. Ahn, X. Zhang, S. Rajakuma, H. Peng</div>
         <span class="pub-venue">MECC, 2023</span>
         <div class="pub-desc">
@@ -266,7 +255,6 @@
         </div>
       </div>
     </div>
-
 
   </section>
 
