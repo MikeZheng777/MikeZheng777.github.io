@@ -32,10 +32,10 @@
     a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--accent-hover); text-decoration: underline; }
 
-    .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 56px 24px 60px; }
 
     /* ─── Header / Bio ─── */
-    .header { display: grid; grid-template-columns: 148px minmax(0, 1fr); column-gap: 32px; row-gap: 12px; align-items: stretch; margin-bottom: 34px; }
+    .header { display: grid; grid-template-columns: 148px minmax(0, 1fr); column-gap: 40px; row-gap: 16px; align-items: stretch; margin-bottom: 48px; }
 
     .header-profile { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; text-align: center; }
 
@@ -48,15 +48,15 @@
     .header-info { min-width: 0; }
 
     .header-info h1 {
-      font-family: 'Lora', serif; font-size: 36px; font-weight: 600;
-      color: var(--text); margin-bottom: 0; letter-spacing: -0.5px; line-height: 1.2;
+      font-family: 'Lora', serif; font-size: 32px; font-weight: 600;
+      color: var(--text); margin-bottom: 0; letter-spacing: -0.35px; line-height: 1.25;
     }
 
     .header-info .bio {
-      color: var(--text-secondary); font-size: 15.5px; line-height: 1.65; margin-bottom: 0;
+      color: var(--text-secondary); font-size: 15.5px; line-height: 1.7; margin-bottom: 0;
     }
 
-    .header-info .bio { margin-top: 12px; }
+    .header-info .bio { margin-top: 16px; }
 
     .header-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 7px; font-size: 13.5px; margin-top: 0; }
     .header-links a { font-weight: 500; }
@@ -139,10 +139,11 @@
     .footer a { color: #99a; }
 
     @media (max-width: 640px) {
-      .header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+      .container { padding: 32px 24px 48px; }
+      .header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; margin-bottom: 40px; }
       .header-profile { display: block; width: 100%; text-align: center; }
       .header-info { display: block; }
-      .header-info .bio { margin-top: 12px; }
+      .header-info .bio { margin-top: 16px; }
       .header-links { justify-content: center; margin-top: 12px; gap: 8px 7px; }
       .header-photo { width: 124px; height: 124px; }
       .header-info h1 { font-size: 28px; }
