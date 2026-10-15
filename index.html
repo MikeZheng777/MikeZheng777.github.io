@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Han Zheng — MIT</title>
+  <link rel="icon" type="image/jpeg" href="headshot.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -127,6 +128,9 @@
     .older-updates summary { color: var(--accent); cursor: pointer; font-size: 14px; width: fit-content; }
     .older-updates summary:hover { color: var(--accent-hover); }
     .older-updates summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .older-updates .show-less { display: none; }
+    .older-updates[open] .show-more { display: none; }
+    .older-updates[open] .show-less { display: inline; }
 
     /* ─── Skills ─── */
     .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -190,7 +194,7 @@
 
   <!-- RECENT UPDATES: add new entries at the top; use YYYY-MM-DD for datetime. -->
   <section id="recent-updates" aria-labelledby="updates-title">
-    <h2 class="section-title" id="updates-title">Recent Updates</h2>
+    <h2 class="section-title" id="updates-title">News</h2>
     <ul class="updates-list">
       <li class="update-entry">
         <time class="update-date" datetime="2026-10-15">2026-10-15</time>
@@ -214,7 +218,7 @@
       </li>
     </ul>
     <details class="older-updates">
-      <summary>Older updates</summary>
+      <summary><span class="show-more">Show more</span><span class="show-less">Show less</span></summary>
       <ul class="updates-list">
       <li class="update-entry">
         <time class="update-date" datetime="2026-07-08">2026-07-08</time>
