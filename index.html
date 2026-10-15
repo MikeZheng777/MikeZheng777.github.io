@@ -35,28 +35,32 @@
     .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
 
     /* ─── Header / Bio ─── */
-    .header { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 48px; }
+    .header { display: grid; grid-template-columns: 148px minmax(0, 1fr); column-gap: 32px; row-gap: 12px; align-items: stretch; margin-bottom: 34px; }
+
+    .header-profile { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; text-align: center; }
 
     .header-photo {
-      flex-shrink: 0; width: 180px; height: 180px; border-radius: 50%;
+      flex-shrink: 0; width: 144px; height: 144px; border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 20px rgba(45, 90, 158, 0.15);
+      box-shadow: 0 2px 12px rgba(45, 90, 158, 0.08);
     }
 
-    .header-info { flex: 1; }
+    .header-info { min-width: 0; }
 
     .header-info h1 {
       font-family: 'Lora', serif; font-size: 36px; font-weight: 600;
-      color: var(--text); margin-bottom: 14px; letter-spacing: -0.5px;
+      color: var(--text); margin-bottom: 0; letter-spacing: -0.5px; line-height: 1.2;
     }
 
     .header-info .bio {
-      color: var(--text-secondary); font-size: 15.5px; line-height: 1.7; margin-bottom: 16px;
+      color: var(--text-secondary); font-size: 15.5px; line-height: 1.65; margin-bottom: 0;
     }
 
-    .header-links { display: flex; flex-wrap: wrap; gap: 6px 4px; font-size: 14.5px; }
+    .header-info .bio { margin-top: 12px; }
+
+    .header-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 7px; font-size: 13.5px; margin-top: 0; }
     .header-links a { font-weight: 500; }
-    .header-links .sep { color: #aab; margin: 0 4px; user-select: none; }
+    .header-links .sep { color: #aab; user-select: none; }
 
     /* ─── Section headings ─── */
     .section-title {
@@ -135,9 +139,12 @@
     .footer a { color: #99a; }
 
     @media (max-width: 640px) {
-      .header { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-      .header-links { justify-content: center; }
-      .header-photo { width: 140px; height: 140px; font-size: 42px; }
+      .header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+      .header-profile { display: block; width: 100%; text-align: center; }
+      .header-info { display: block; }
+      .header-info .bio { margin-top: 12px; }
+      .header-links { justify-content: center; margin-top: 12px; gap: 8px 7px; }
+      .header-photo { width: 124px; height: 124px; }
       .header-info h1 { font-size: 28px; }
       .exp-header { flex-direction: column; gap: 2px; }
       .update-entry { grid-template-columns: 82px minmax(0, 1fr); gap: 10px; }
@@ -150,28 +157,33 @@
 
   <!-- BIO -->
   <div class="header">
-    <img class="header-photo" src="headshot.JPG" alt="Han Zheng">
+    <div class="header-profile">
+      <img class="header-photo" src="headshot.JPG" alt="Han Zheng">
+      <div class="header-links">
+      <a href="mailto:hanzheng@mit.edu">Email</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="https://github.com/MikeZheng777">GitHub</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="https://www.linkedin.com/in/han-zheng-84408021b/">LinkedIn</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="https://x.com/hanzheng_7">X</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="https://scholar.google.com/citations?user=sZc3Xw8AAAAJ&amp;hl=en&amp;view_op=list_works&amp;sortby=pubdate">Scholar</a>
+    </div>
+    </div>
     <div class="header-info">
       <h1>Han Zheng</h1>
       <p class="bio">
         I'm a Ph.D. student at MIT, affiliated with the Laboratory for Information and Decision Systems (LIDS), advised by
         <a href="https://www.wucathy.com">Prof. Cathy Wu</a>.
+      </p>
+      <p class="bio">
         Previously I was at the University of Michigan working with the late
         <a href="https://en.wikipedia.org/wiki/Huei_Peng">Prof. Huei Peng</a>, and I hold dual B.S./B.E. degrees
         from UIUC and Zhejiang University.
       </p>
       <p class="bio">I co-lead <a href="https://github.com/Human-Agent-Society/reef">Reef</a> and <a href="https://github.com/Human-Agent-Society/CORAL">CORAL</a> with my amazing friends.</p>
-      <div class="header-links">
-      <a href="mailto:hanzheng@mit.edu">Email</a>
-      <span class="sep">/</span>
-      <a href="https://github.com/MikeZheng777">GitHub</a>
-      <span class="sep">/</span>
-      <a href="https://www.linkedin.com/in/han-zheng-84408021b/">LinkedIn</a>
-      <span class="sep">/</span>
-      <a href="https://x.com/hanzheng_7">X</a>
-      <span class="sep">/</span>
-      <a href="https://scholar.google.com/citations?user=sZc3Xw8AAAAJ&amp;hl=en&amp;view_op=list_works&amp;sortby=pubdate">Scholar</a>
-    </div>
+
     </div>
   </div>
 
@@ -387,4 +399,3 @@
 
 </body>
 </html>
-
