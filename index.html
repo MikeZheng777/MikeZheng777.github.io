@@ -108,12 +108,21 @@
     .exp-org { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
     .exp-desc { font-size: 14px; color: #555; line-height: 1.6; }
 
-    /* ─── Education ─── */
-    .edu-entry { display: flex; gap: 12px; padding: 10px 0; align-items: baseline; }
-    .edu-years { flex-shrink: 0; width: 90px; font-size: 13.5px; color: #888; font-weight: 500; }
-    .edu-details { font-size: 14.5px; color: var(--text); line-height: 1.5; }
-    .edu-details .school { font-weight: 600; }
-    .edu-details .degree { color: var(--text-secondary); }
+    /* ─── Recent updates ─── */
+    .updates-list { list-style: none; margin-top: 12px; }
+    .update-entry {
+      display: grid; grid-template-columns: 90px minmax(0, 1fr);
+      gap: 16px; padding: 10px 0; border-bottom: 1px solid #eef0f4;
+    }
+    .update-entry:last-child { border-bottom: none; }
+    .update-date { font-size: 13.5px; color: #888; padding-top: 2px; white-space: nowrap; }
+    .update-content { font-size: 14.5px; color: var(--text-secondary); line-height: 1.6; }
+    .update-content strong { color: var(--text); font-weight: 600; }
+    .update-content a strong { color: inherit; }
+    .older-updates { margin-top: 12px; }
+    .older-updates summary { color: var(--accent); cursor: pointer; font-size: 14px; width: fit-content; }
+    .older-updates summary:hover { color: var(--accent-hover); }
+    .older-updates summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
     /* ─── Skills ─── */
     .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -131,6 +140,7 @@
       .header-photo { width: 140px; height: 140px; font-size: 42px; }
       .header-info h1 { font-size: 28px; }
       .exp-header { flex-direction: column; gap: 2px; }
+      .update-entry { grid-template-columns: 82px minmax(0, 1fr); gap: 10px; }
     }
   </style>
 </head>
@@ -150,6 +160,7 @@
         <a href="https://en.wikipedia.org/wiki/Huei_Peng">Prof. Huei Peng</a>, and I hold dual B.S./B.E. degrees
         from UIUC and Zhejiang University.
       </p>
+      <p class="bio">I co-lead <a href="https://github.com/Human-Agent-Society/reef">Reef</a> and <a href="https://github.com/Human-Agent-Society/CORAL">CORAL</a> with my amazing friends.</p>
       <div class="header-links">
       <a href="mailto:hanzheng@mit.edu">Email</a>
       <span class="sep">/</span>
@@ -163,6 +174,66 @@
     </div>
     </div>
   </div>
+
+  <!-- RECENT UPDATES: add new entries at the top; use YYYY-MM-DD for datetime. -->
+  <section id="recent-updates" aria-labelledby="updates-title">
+    <h2 class="section-title" id="updates-title">Recent Updates</h2>
+    <ul class="updates-list">
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-10-15">2026-10-15</time>
+        <p class="update-content">Invited to present <a href="https://github.com/Human-Agent-Society/CORAL">CORAL</a> at the <strong>2026 INFORMS Annual Meeting</strong>. See you in SF. Feel free to <a href="mailto:hanzheng@mit.edu">reach out</a> for coffee chat.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-10-08">2026-10-08</time>
+        <p class="update-content">Presented <a href="https://arxiv.org/pdf/2604.01658">CORAL</a> at <strong>COLM 2026</strong> with <a href="https://quao627.github.io">Ao</a> and <a href="https://bobbyzhouzijian.github.io">Zijian</a>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-09-28">2026-09-28</time>
+        <p class="update-content"><a href="https://github.com/Human-Agent-Society/reef">Reef</a> reached <strong>7,000 stars</strong> on GitHub.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-09-24">2026-09-24</time>
+        <p class="update-content">Three papers accepted to <strong>NeurIPS 2026</strong>: <a href="https://arxiv.org/abs/2605.18810">D-PACE</a> (<strong>Spotlight</strong>), <a href="https://arxiv.org/abs/2606.02859">Economy of Minds</a>, and <a href="https://arxiv.org/abs/2605.25246">FrontierOR</a>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-09-02">2026-09-02</time>
+        <p class="update-content">We open-sourced <a href="https://github.com/Human-Agent-Society/reef">Reef</a>, an infrastructure for continually self-improving agents. <a href="https://github.com/Human-Agent-Society/reef">Code</a> / <a href="https://x.com/hanzheng_7/status/2095641677259997372">Post on X</a></p>
+      </li>
+    </ul>
+    <details class="older-updates">
+      <summary>Older updates</summary>
+      <ul class="updates-list">
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-07-08">2026-07-08</time>
+        <p class="update-content"><a href="https://arxiv.org/abs/2604.01658">CORAL</a> accepted to <strong>COLM 2026</strong>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-06-01">2026-06-01</time>
+        <p class="update-content">Started a research internship at <a href="https://aws.amazon.com/nova/forge/"><strong>Amazon AGI</strong></a>, working on agentic post-training.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-05-28">2026-05-28</time>
+        <p class="update-content">Presented <a href="https://github.com/Human-Agent-Society/CORAL">CORAL</a> at the <a href="https://www.jumptrading.com/ai-ml">Jump Trading AI Symposium</a>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-04-02">2026-04-02</time>
+        <p class="update-content">We open-sourced <a href="https://github.com/Human-Agent-Society/CORAL">CORAL</a>, the first autonomous multi-agent framework for open-ended discovery. <a href="https://x.com/hanzheng_7/status/2041291008378343707">Post on X</a></p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-03-24">2026-03-24</time>
+        <p class="update-content">Our paper on <a href="https://arxiv.org/abs/2603.23838">RL-guided multi-robot planning</a> was accepted to <strong>JAIR</strong>. Read more in <a href="https://news.mit.edu/2026/ai-system-keeps-warehouse-robot-traffic-running-smoothly-0326">MIT News</a> and the <a href="https://www.symbotic.com/blog/the-bottleneck-for-dense-storage-isnt-robot-performance-its-the-traffic/">Symbotic blog</a>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2026-02-15">2026-02-15</time>
+        <p class="update-content"><a href="https://quao627.github.io/#alphaopt">AlphaOPT</a> was accepted to <strong>KDD 2026</strong>.</p>
+      </li>
+      <li class="update-entry">
+        <time class="update-date" datetime="2025-06-01">2025-06-01</time>
+        <p class="update-content">Started a research internship at <a href="https://www.symbotic.com"><strong>Symbotic</strong></a>, working on learning-guided multi-robot path planning.</p>
+      </li>
+      </ul>
+    </details>
+  </section>
 
   <!-- RESEARCH -->
   <section>
@@ -197,7 +268,7 @@
           T. Wu, Y. Yao, Z. Qi, <span class="me">H. Zheng</span>, Z. Wang,
           H. Ma, L. Liao, H. Lakkaraju, J. Li, Y. Du
         </div>
-        <span class="pub-venue">arXiv, 2026</span>
+        <span class="pub-venue">NeurIPS, 2026 · Spotlight</span>
         <div class="pub-desc">
           Introduces D-PACE, a position-aware training objective that improves parallel speculative decoding speed and draft acceptance without modifying the model architecture or inference process.
         </div>
@@ -210,7 +281,7 @@
         <div class="pub-authors">
           Z. Qi, H. Su, A. Qu, C. Wang, Y. Yao, <span class="me">H. Zheng</span>, K. Chattopadhyay, G. Xu, Z. Wang, W. Ye, V. J. Reddi, J. Li, P. P. Liang, H. Lakkaraju, S. Kakade, Y. Du
         </div>
-        <span class="pub-venue">arXiv, 2026</span>
+        <span class="pub-venue">NeurIPS, 2026</span>
         <div class="pub-desc">
           A decentralized multi-agent system inspired by Hayek's economics, where agents compete via auctions and evolve through economic selection. Simple market signals turn populations of weak partial agents into collective intelligence that outperforms stronger monolithic baselines across five agentic tasks.
         </div>
@@ -289,7 +360,7 @@
     <div class="exp-entry">
       <div class="exp-header">
         <span class="exp-role">Research Intern — Amazon AGI</span>
-        <span class="exp-date">2026</span>
+        <span class="exp-date">May – Aug 2026</span>
       </div>
       <div class="exp-org">Bellevue, WA</div>
       <div class="exp-desc">
@@ -308,40 +379,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section>
-    <div class="section-title">Education</div>
-    <div class="edu-entry">
-      <div class="edu-years">2023 –</div>
-      <div class="edu-details">
-        <span class="school">Massachusetts Institute of Technology</span><br>
-        <span class="degree">Ph.D. in Mechanical Engineering &amp; Computational Science and Engineering</span>
-      </div>
-    </div>
-    <div class="edu-entry">
-      <div class="edu-years">2021 – 2023</div>
-      <div class="edu-details">
-        <span class="school">University of Michigan – Ann Arbor</span><br>
-        <span class="degree">Ph.D. in Mechanical Engineering (transferred to MIT)</span>
-      </div>
-    </div>
-    <div class="edu-entry">
-      <div class="edu-years">2017 – 2021</div>
-      <div class="edu-details">
-        <span class="school">University of Illinois at Urbana-Champaign</span><br>
-        <span class="degree">B.S. Mechanical Engineering with Highest Honors</span>
-      </div>
-    </div>
-    <div class="edu-entry">
-      <div class="edu-years">2017 – 2021</div>
-      <div class="edu-details">
-        <span class="school">Zhejiang University</span><br>
-        <span class="degree">B.E. in Mechanical Engineering</span>
-      </div>
-    </div>
-  </section>
-
-
   <div class="footer">
     Design inspired by <a href="https://jonbarron.info">Jon Barron</a>'s academic page. · Last updated 2026.
   </div>
@@ -350,3 +387,4 @@
 
 </body>
 </html>
+
